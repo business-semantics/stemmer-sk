@@ -1,7 +1,8 @@
 package sk.essentialdata.nlp.stemmer.sk;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Filip Bednárik
@@ -27,7 +28,7 @@ public class SlovakStemmerTest {
             char[] wordCharArray = inputs[i].toCharArray();
             int size = slovakStemmer.stem(wordCharArray, wordCharArray.length);
             String stemmed = new String(wordCharArray, 0, size);
-            Assert.assertEquals(stemmed, outputs[i]);
+            assertEquals(stemmed, outputs[i]);
         }
     }
 }
